@@ -3,13 +3,103 @@
   <head>
     <meta charset="utf-8">
     <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles/index.css" type="text/css">
   </head>
   <body>
+
+    <nav id="navbar">
+      <header>Basic Git</header>
+      <a href="#Introduction" class="nav-link">Introduction</a>
+      <a href="#The_History_of_Git" class="nav-link">The History of Git</a>
+      <a href="#Installing_Git" class="nav-link">Installing Git</a>
+      <a href="#Getting_Started" class="nav-link">Getting Started</a>
+      <a href="#Setting_Up_a_Repository" class="nav-link">Setting Up a Repository</a>
+      <a href="#Pushing" class="nav-link">Pushing</a>
+    </nav>
+
     <main id="main-doc">
-      <section id="introduction" class="main-section">
+      <section id="Introduction" class="main-section">
         <header>Introduction</header>
-        
+        <p>Git is a version control system used to record changes to a file over time so that you can recall specific versions later on. It allows someone to save different versions of a web design or image so that they basically don't have to back track and delete and progress. You can use it to compare changes over time or to see who modified a file and when they did so.</p>
+
+        <p>The goal of this page is to get you started with git and teach you the following:</p>
+
+        <ul>
+          <li>How to install git on your computer</li>
+          <li>How to interact with git using the command line</li>
+          <li>How to set up a repository</li>
+          <li>How to push your code to your repository</li>
+          <li>Where to find more information about Git</li>
+        </ul>
       </section>
+
+      <section id="The_History_of_Git" class="main-section">
+        <header>The History of Git</header>
+        <p>Git was created by the same team that created the Linux Kernal. They originally changed the software via passing around patches and archiving files but in 2002, they decided to start using a proprietary DVCS called bit keeper.</p>
+        <p>In 2005, the relationship between the two comanies began to crumble and BitKeeper decided to remove their products free od charge status for Linux. This pushed Linux to start creating their own version control system called Git and thus the system was born.</p>
+      </section>
+
+      <section id="Installing_Git" class="main-section">
+        <header>Installing Git</header>
+        <p>Installing Git is quick and easy. Depending on your machine ,you may even be able to do it all from the command line. If you are using a linux machine, you will need to open your terminal and type:</p>
+
+        <code>$ sudo dnf install git-all</code>
+
+        <p>If you are using a Debian based distribution such as Ubuntu type:</p>
+
+        <code>$ sudo apt install git-all</code>
+
+        <p>If you are using a Windows or a Mac device, go to this <a href="https://git-scm.com/download" id="git-download">site</a>. After the download is complete, you will have access to all of the tools that git provides.</p>
+      </section>
+
+      <section id="Getting_Started" class="main-section">
+        <header>Getting Started</header>
+        <p>One of the first things you can do after installing git is update it with some of you information; to let the system know who you are. This is important because every commit (more on this later) will use this information to keep track of who is updating the repository.</p>
+
+        <code>$ git config --global user.name "John Doe"<br>
+        $ git config --global user.email johndoe@example.com</code>
+
+        <p>If you would like to set up your environment to use a different editor you can use the command:</p>
+
+        <code>$ git config --global core.editor emacs</code>
+
+        <p>Where emacs can be replaced by any editor of your choice</p>
+      </section>
+
+      <section id="Setting_Up_a_Repository" class="main-section">
+        <header>Setting Up a Repository</header>
+        <p>Turning a directory into a repository can be achieved either by:</p>
+        <ul>
+          <li>Taking a local directory and turning it into a repository.</li>
+          <li>Cloning and existing repository</li>
+        </ul>
+
+          <p>To create a new repository from a local directory simply navigate to the folder using the command line and type:</p>
+          <code>git init <br>
+                git add *.c <br>
+                git add LICENSE <br>
+                git commit -m 'initial project version'</code>
+          <p>This will set up your repository to start tracking files. If you want to clone an existing repo, you can use the clone command in the following way:</p>
+          <code>git clone https://github.com/ex-user/ex-repo</code>
+
+          <p>This example uses github as a source for the repo; it is highly recommended that you set up an account of your own at <a href="github.com">github.com</a></p>
+      </section>
+
+      <section id="Pushing" class="main-section">
+        <header>Pushing</header>
+        <p>Once you have your repository set up you can begin staging your code and tracking it. using the <em>git status</em> will tell you what files have been tracked. To begin tracking files you need to use the add function:</p>
+        <code>$ git add "file_name"</code>
+        <p>where "file_name" is the file you would like to be tracked. You can replace this with an astrisk (*) if you would like all of your files to be tracked. <br>
+        Next step is to use the commit function to add a message with your files like so:</p>
+        <code>$ git commit -m "initial commit"</code>
+        <p>The added files will be commited with the message that you specify between the quotation marks. The -m tells the system that you want to add a message on the command line, otherwise you will be taken to your text editor of choice.</p>
+        <p>The final step to staging your code to the repository is to use the push function like so: </p>
+        <code>$ git push -u origin master</code>
+        <p>The <em>-u origin master</em> part is important if this is your first push for the repository but can be ignored in the future.</p>
+        <p>And that's it! Those are the basics of Git and will allow you to upload your code to a decentrilized version control system and help make it easier to collaborate on a piece with other people. If you would like more information about git and how to use it, I recommend using <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Pro Git</a> a free online book that explains Git in much more detail. It is where I got the majority of the information that I posted above. <br>
+        Thanks for reading and happy coding!</p>
+      </section>
+
     </main>
     <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
     </script>
